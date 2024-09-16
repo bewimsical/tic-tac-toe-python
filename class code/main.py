@@ -23,5 +23,20 @@ class Square:
     def draw_square(self):
         self.rect = pg.draw.rect(screen, 'white', [self.x, self.y, self.length, self.width])
         pg.draw.rect(screen, 'black', [self.x, self.y, self.length, self.width], 3)
-        
+        font = pg.font.Font(self.font, 100)
+        choice = font.render(self.choice, True, 'black')
+        screen.blit(choice, (self.x + 15, self.y - 18))
+
+done = False
+
+while not done:
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            done = True
+
+    screen.fill(DARK_GREEN)
+    box = Square(50, 50, BLACK)
+    box.draw_square()
+    pg.display.flip()
+pg.quit()
     

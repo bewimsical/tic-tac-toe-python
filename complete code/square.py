@@ -24,7 +24,8 @@ class Square:
             return self.choice == square.choice
     
     def update_choice(self, choice):
-        self.choice = choice
+        if self.choice == " ":
+            self.choice = choice
 
         
 
